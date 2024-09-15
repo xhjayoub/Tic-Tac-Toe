@@ -86,6 +86,7 @@ function gameBoard() {
                 let cell = document.createElement("div");
                 cell.setAttribute("i", i);
                 cell.setAttribute("j", j);
+                cell.innerHTML = ["X","O"][Math.floor(Math.random() * (2 - 0) + 0)];
                 theGameboard.appendChild(cell);
             }
         }
