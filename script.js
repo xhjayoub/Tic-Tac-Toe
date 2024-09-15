@@ -66,6 +66,9 @@ function gameBoard() {
             displayGameBoard();
 
         }
+        if (winner === undefined) {
+            console.log("No winner !");
+        }
         reset();
     }
     const reset = function() {
