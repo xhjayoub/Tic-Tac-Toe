@@ -3,14 +3,8 @@ function gameBoard() {
     let player = "X";
     let round = 0;
     let winner;
+    let endOrNot;
     const insertPlayerInput = function(posArr) {
-        if (round >= 4) {
-            winner = checkWinner();
-            if (winner !== undefined) {
-                console.log(winner, " is the winner !");
-                return false;
-            }
-        }
         if (gameBoardArr[posArr[0]][posArr[1]] === undefined) {
             gameBoardArr[posArr[0]][posArr[1]] = player;
             round++;
@@ -22,10 +16,15 @@ function gameBoard() {
         } else {
             player = "X";
         }
+        winner = checkWinner();
+        if (winner !== undefined) {
+            console.log(winner, " is the winner !");
+            return "END";
+        }
     };
     const displayGameBoard = () => {
         for (let i = 0; i < gameBoardArr.length; i++) {
-            console.log(gameBoardArr[i][0],gameBoardArr[i][1],gameBoardArr[i][2]);
+            console.log(gameBoardArr[i][0], '|',gameBoardArr[i][1],'|',gameBoardArr[i][2]);
         }
     };
     const checkLine = (index) => { return (gameBoardArr[index][0] === gameBoardArr[index][1]) && (gameBoardArr[index][0] === gameBoardArr[index][2])};
@@ -51,14 +50,17 @@ function gameBoard() {
     const getWhoPlay = () => { return player; };
     const play = function() {
         for (let i = 0; i<10 ; i++) {
-            let pos1 = parseInt(prompt(getWhoPlay() + " pos 1 : "));
-            let pos2 = parseInt(prompt(getWhoPlay() + " pos 2 : "));
-            insertPlayerInput([pos1, pos2]);
-            displayGameBoard();
-            if (winner !== undefined) {
+            do {
+                let pos1 = parseInt(prompt(getWhoPlay() + " pos 1 : "));
+                let pos2 = parseInt(prompt(getWhoPlay() + " pos 2 : "));
+                endOrNot = insertPlayerInput([pos1, pos2]);
+            } while (endOrNot === false);
+            if (endOrNot === "END") {
                 console.log("END!");
-                return false;
+                break;
             }
+            displayGameBoard();
+
         }
     }
     return { insertPlayerInput, displayGameBoard, getWhoPlay, play};
