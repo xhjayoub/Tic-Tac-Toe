@@ -15,7 +15,7 @@ function gameBoard() {
     };
     const displayGameBoard = () => {
         for (let i = 0; i < gameBoardArr.length; i++) {
-            console.log(gameBoardArr[i]);
+            console.log(gameBoardArr[i][0],gameBoardArr[i][1],gameBoardArr[i][2]);
         }
     };
     const checkLine = (index) => { return (gameBoardArr[index][0] === gameBoardArr[index][1]) && (gameBoardArr[index][0] === gameBoardArr[index][2])};
