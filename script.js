@@ -47,6 +47,7 @@ function gameBoard() {
             return gameBoardArr[2][0];
         }
     };
-    return { insertPlayerInput, displayGameBoard };
+    const getWhoPlay = () => { return player; };
+    return { insertPlayerInput, displayGameBoard, getWhoPlay};
 }
 const game = gameBoard();
