@@ -78,6 +78,20 @@ function gameBoard() {
         winner = undefined;
         endOrNot = undefined;
     }
-    return { insertPlayerInput, displayGameBoard, getWhoPlay, play};
+    const generateGameboard = function() {
+        const theGameboard = document.createElement("div");
+        theGameboard.setAttribute("id", "game-board");
+        for (let i = 0; i < 3 ; i++) {
+            for (let j = 0; j < 3 ; j++) {
+                let cell = document.createElement("div");
+                cell.setAttribute("i", i);
+                cell.setAttribute("j", j);
+                theGameboard.appendChild(cell);
+            }
+        }
+        document.querySelector("body").appendChild(theGameboard);
+    }
+    return { insertPlayerInput, displayGameBoard, getWhoPlay, play, generateGameboard};
 }
 const game = gameBoard();
+game.generateGameboard();
