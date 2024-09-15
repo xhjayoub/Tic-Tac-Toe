@@ -50,9 +50,13 @@ function gameBoard() {
     const getWhoPlay = () => { return player; };
     const play = function() {
         for (let i = 0; i<10 ; i++) {
+            let pos1;
+            let pos2;
             do {
-                let pos1 = parseInt(prompt(getWhoPlay() + " pos 1 : "));
-                let pos2 = parseInt(prompt(getWhoPlay() + " pos 2 : "));
+                do {
+                    pos1 = parseInt(prompt(getWhoPlay() + " pos 1 : "));
+                    pos2 = parseInt(prompt(getWhoPlay() + " pos 2 : "));
+                } while (!(pos1<=2 && pos1 >= 0) || !(pos2<=2 && pos2>= 0));      
                 endOrNot = insertPlayerInput([pos1, pos2]);
             } while (endOrNot === false);
             if (endOrNot === "END") {
