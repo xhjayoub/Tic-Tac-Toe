@@ -13,6 +13,10 @@ function gameBoard() {
             player = "X";
         }
     };
-    const displayGameBoard = () => console.log(gameBoardArr);
+    const displayGameBoard = () => {
+        for (let i = 0; i < gameBoardArr.length; i++) {
+            console.log(gameBoardArr[i]);
+        }
+    };
     return { insertPlayerInput, displayGameBoard };
 }
