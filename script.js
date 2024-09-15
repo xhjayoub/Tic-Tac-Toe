@@ -18,5 +18,6 @@ function gameBoard() {
             console.log(gameBoardArr[i]);
         }
     };
-    return { insertPlayerInput, displayGameBoard };
+    const checkLine = (index) => { return (gameBoardArr[index][0] === gameBoardArr[index][1]) && (gameBoardArr[index][0] === gameBoardArr[index][2])};
+    return { insertPlayerInput, displayGameBoard , checkLine};
 }
