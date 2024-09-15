@@ -2,9 +2,10 @@ function gameBoard() {
     let gameBoardArr = [[],[],[]];
     let player = "X";
     let round = 0;
+    let winner;
     const insertPlayerInput = function(posArr) {
-        if (round >= 5) {
-            let winner = checkWinner();
+        if (round >= 4) {
+            winner = checkWinner();
             if (winner !== undefined) {
                 console.log(winner, " is the winner !");
                 return false;
@@ -48,6 +49,19 @@ function gameBoard() {
         }
     };
     const getWhoPlay = () => { return player; };
-    return { insertPlayerInput, displayGameBoard, getWhoPlay};
+    const play = function() {
+        for (let i = 0; i<10 ; i++) {
+            let pos1 = parseInt(prompt(getWhoPlay() + " pos 1 : "));
+            let pos2 = parseInt(prompt(getWhoPlay() + " pos 2 : "));
+            insertPlayerInput([pos1, pos2]);
+            displayGameBoard();
+            if (winner !== undefined) {
+                console.log("END!");
+                return false;
+            }
+        }
+    }
+    return { insertPlayerInput, displayGameBoard, getWhoPlay, play};
 }
 const game = gameBoard();
+game.play();
