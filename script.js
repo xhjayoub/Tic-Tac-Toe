@@ -3,6 +3,13 @@ function gameBoard() {
     let player = "X";
     let round = 0;
     const insertPlayerInput = function(posArr) {
+        if (round >= 5) {
+            let winner = checkWinner();
+            if (winner !== undefined) {
+                console.log(winner, " is the winner !");
+                return false;
+            }
+        }
         if (gameBoardArr[posArr[0]][posArr[1]] === undefined) {
             gameBoardArr[posArr[0]][posArr[1]] = player;
             round++;
