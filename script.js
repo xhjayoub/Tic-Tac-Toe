@@ -49,7 +49,7 @@ function gameBoard() {
     };
     const getWhoPlay = () => { return player; };
     const play = function() {
-        for (let i = 0; i<10 ; i++) {
+        for (let i = 0; i<9 ; i++) {
             let pos1;
             let pos2;
             do {
@@ -66,8 +66,15 @@ function gameBoard() {
             displayGameBoard();
 
         }
+        reset();
+    }
+    const reset = function() {
+        gameBoardArr = [[],[],[]];
+        player = "X";
+        round = 0;
+        winner = undefined;
+        endOrNot = undefined;
     }
     return { insertPlayerInput, displayGameBoard, getWhoPlay, play};
 }
 const game = gameBoard();
-game.play();
