@@ -1,9 +1,11 @@
 function gameBoard() {
     let gameBoardArr = [[],[],[]];
     let player = "X";
+    let round = 0;
     const insertPlayerInput = function(posArr) {
         if (gameBoardArr[posArr[0]][posArr[1]] === undefined) {
             gameBoardArr[posArr[0]][posArr[1]] = player;
+            round++;
         } else {
             return false;
         }
