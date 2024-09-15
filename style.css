@@ -3,3 +3,9 @@
     grid-template-columns: repeat(3, 300px);
     grid-template-rows: repeat(3, 300px);
 }
+#game-board div {
+    font-size: 15vw;
+    text-align: center;
+    border: 1px solid black;
+    cursor: pointer;
+}
