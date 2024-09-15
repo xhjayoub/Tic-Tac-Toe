@@ -1,6 +1,14 @@
 function gameBoard() {
     let gameBoardArr = [[],[],[]];
-    const insertPlayerInput = (player, posArr) => gameBoardArr[posArr[0]][posArr[1]] = player;
+    let player = "X";
+    const insertPlayerInput = function(posArr) {
+        gameBoardArr[posArr[0]][posArr[1]] = player;
+        if (player === "X") {
+            player = "O";
+        } else {
+            player = "X";
+        }
+    };
     const displayGameBoard = () => console.log(gameBoardArr);
     return { insertPlayerInput, displayGameBoard };
 }
