@@ -25,6 +25,7 @@ function tictactoe() {
         if (round === 9) {
             displayMessage(winner);
         }
+        updatePlayerTurns();
     };
     const displayGameBoard = () => {
         for (let i = 0; i < gameBoardArr.length; i++) {
@@ -93,6 +94,7 @@ function tictactoe() {
         endOrNot = undefined;
     }
     const generateGameboard = function() {
+        updatePlayerTurns();
         const oldBoard = document.getElementById("game-board");
         if (oldBoard !== null) {
             return false;
@@ -185,6 +187,10 @@ function tictactoe() {
         const plTurnsMsg = document.createElement("div");
         plTurnsMsg.setAttribute("id", "playerTurns");
         document.querySelector("body").appendChild(plTurnsMsg);
+    }
+    const updatePlayerTurns = function() {
+        const plTurnsMsg = document.querySelector("#playerTurns");
+        plTurnsMsg.innerHTML = getWhoPlay() + " Turn";
     }
     playersNames();
     playerTurnsIniatilize();
