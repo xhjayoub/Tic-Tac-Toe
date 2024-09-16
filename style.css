@@ -1,3 +1,9 @@
+:root {
+    --first-color: #FF204E;
+    --second-color: #A0153E;
+    --third-color: #5D0E41;
+    --fourth-color: #00224D;
+}
 #game-board {
     display: grid;
     grid-template-columns: repeat(3, 300px);
