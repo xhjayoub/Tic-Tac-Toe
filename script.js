@@ -62,7 +62,14 @@ function tictactoe() {
             return gameBoardArr[0][2];
         }
     };
-    const getWhoPlay = () => { return player; };
+    const getWhoPlay = function() { 
+        if (player === "X") {
+            return document.getElementById("player1Input").value + ` | ${player}`;
+        }
+        
+        return document.getElementById("player2Input").value + ` | ${player}`;
+        
+     };
     const play = function() {
         for (let i = 0; i<9 ; i++) {
             let pos1;
