@@ -1,4 +1,4 @@
-function gameBoard() {
+function tictactoe() {
     let gameBoardArr = [[],[],[]];
     let player = "X";
     let round = 0;
@@ -88,13 +88,11 @@ function gameBoard() {
                 cell.setAttribute("j", j);
                 // cell.innerHTML = ["X","O"][Math.floor(Math.random() * (2 - 0) + 0)];
                 cell.addEventListener("click", function() {
-                    console.log(round);
                     if (winner === undefined && round <= 8) {
                         if (cell.innerHTML === "") {
                             cell.innerHTML = player;
                             insertPlayerInput([i, j]);
                         }
-                        
                     }
                     
                 })
@@ -105,5 +103,5 @@ function gameBoard() {
     }
     return { insertPlayerInput, displayGameBoard, getWhoPlay, play, generateGameboard};
 }
-const game = gameBoard();
+const game = tictactoe();
 game.generateGameboard();
