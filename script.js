@@ -98,9 +98,6 @@ function tictactoe() {
         for (let i = 0; i < 3 ; i++) {
             for (let j = 0; j < 3 ; j++) {
                 let cell = document.createElement("div");
-                cell.setAttribute("i", i);
-                cell.setAttribute("j", j);
-                // cell.innerHTML = ["X","O"][Math.floor(Math.random() * (2 - 0) + 0)];
                 cell.addEventListener("click", function() {
                     if (winner === undefined && round <= 8) {
                         if (cell.innerHTML === "") {
