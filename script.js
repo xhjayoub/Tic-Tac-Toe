@@ -19,7 +19,11 @@ function tictactoe() {
         winner = checkWinner();
         if (winner !== undefined) {
             console.log(winner, " is the winner !");
+            displayMessage(winner);
             return "END";
+        }
+        if (round === 9) {
+            displayMessage(winner);
         }
     };
     const displayGameBoard = () => {
@@ -134,6 +138,18 @@ function tictactoe() {
         document.querySelector("body").appendChild(btnContainer);
 
 
+    }
+    const displayMessage = function(winner) {
+        const msgContainer = document.createElement("div");
+        msgContainer.setAttribute("id", "msg");
+        if (winner) {
+            msgContainer.innerHTML = winner + " wins !";
+            
+        } else if (round === 9) {
+            msgContainer.innerHTML = "No winners !";
+        }
+        
+        document.querySelector("body").appendChild(msgContainer);
     }
     playAndRestart();
     return { insertPlayerInput, displayGameBoard, getWhoPlay, play, generateGameboard};
