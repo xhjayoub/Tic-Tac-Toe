@@ -155,6 +155,33 @@ function tictactoe() {
         
         document.querySelector("body").appendChild(msgContainer);
     }
+    const playerNamesGenerator = function(id, name) {
+        console.log("logged");
+        const player = document.createElement("div");
+        player.setAttribute("id", id);
+        const playerLabel = document.createElement("label");
+        playerLabel.setAttribute("for", name);
+        playerLabel.innerHTML = id;
+        const nameInput = document.createElement("input");
+        nameInput.setAttribute("type", "text");
+        nameInput.setAttribute("id", name);
+        nameInput.setAttribute("name", name);
+        playerLabel.appendChild(nameInput);
+        player.appendChild(playerLabel);
+        return player;
+    }
+    const playersNames = function() {
+        console.log("logged");
+        const playersNamesContainer = document.createElement("div");
+        playersNamesContainer.setAttribute("id","playerNames");
+        
+        const player1 = playerNamesGenerator("player1", "player1Input");
+        const player2 = playerNamesGenerator("player2", "player2Input");
+        playersNamesContainer.appendChild(player1);
+        playersNamesContainer.appendChild(player2);
+        document.querySelector("body").appendChild(playersNamesContainer);
+    }
+    playersNames();
     playAndRestart();
     return { insertPlayerInput, displayGameBoard, getWhoPlay, play, generateGameboard};
 }
