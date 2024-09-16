@@ -165,7 +165,6 @@ function tictactoe() {
         document.querySelector("body").appendChild(msgContainer);
     }
     const playerNamesGenerator = function(id, name) {
-        console.log("logged");
         const player = document.createElement("div");
         player.setAttribute("id", id);
         const playerLabel = document.createElement("label");
@@ -180,7 +179,6 @@ function tictactoe() {
         return player;
     }
     const playersNames = function() {
-        console.log("logged");
         const playersNamesContainer = document.createElement("div");
         playersNamesContainer.setAttribute("id","playerNames");
         
