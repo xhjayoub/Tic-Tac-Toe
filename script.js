@@ -89,6 +89,10 @@ function tictactoe() {
         endOrNot = undefined;
     }
     const generateGameboard = function() {
+        const oldBoard = document.getElementById("game-board");
+        if (oldBoard !== null) {
+            return false;
+        }
         const theGameboard = document.createElement("div");
         theGameboard.setAttribute("id", "game-board");
         for (let i = 0; i < 3 ; i++) {
