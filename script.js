@@ -181,7 +181,13 @@ function tictactoe() {
         playersNamesContainer.appendChild(player2);
         document.querySelector("body").appendChild(playersNamesContainer);
     }
+    const playerTurnsIniatilize = function() {
+        const plTurnsMsg = document.createElement("div");
+        plTurnsMsg.setAttribute("id", "playerTurns");
+        document.querySelector("body").appendChild(plTurnsMsg);
+    }
     playersNames();
+    playerTurnsIniatilize();
     playAndRestart();
     return { insertPlayerInput, displayGameBoard, getWhoPlay, play, generateGameboard};
 }
