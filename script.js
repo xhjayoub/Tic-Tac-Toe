@@ -88,9 +88,13 @@ function gameBoard() {
                 cell.setAttribute("j", j);
                 // cell.innerHTML = ["X","O"][Math.floor(Math.random() * (2 - 0) + 0)];
                 cell.addEventListener("click", function() {
-                    if (winner === undefined) {
-                        cell.innerHTML = player;
-                        insertPlayerInput([i, j]);
+                    console.log(round);
+                    if (winner === undefined && round <= 8) {
+                        if (cell.innerHTML === "") {
+                            cell.innerHTML = player;
+                            insertPlayerInput([i, j]);
+                        }
+                        
                     }
                     
                 })
