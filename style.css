@@ -10,15 +10,18 @@
     grid-template-rows: repeat(3, 300px);
 }
 #game-board div {
+    background-color: var(--third-color);
     font-size: 15vw;
     text-align: center;
     border: 1px solid black;
     cursor: pointer;
 }
 body {
+    background-color: var(--first-color);
     display: flex;
     flex-direction: column;
     gap: 15px;
     align-items: center;
     justify-content: center;
+    color: var(--fourth-color);
 }
