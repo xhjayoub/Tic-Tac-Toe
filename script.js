@@ -86,7 +86,14 @@ function gameBoard() {
                 let cell = document.createElement("div");
                 cell.setAttribute("i", i);
                 cell.setAttribute("j", j);
-                cell.innerHTML = ["X","O"][Math.floor(Math.random() * (2 - 0) + 0)];
+                // cell.innerHTML = ["X","O"][Math.floor(Math.random() * (2 - 0) + 0)];
+                cell.addEventListener("click", function() {
+                    if (winner === undefined) {
+                        cell.innerHTML = player;
+                        insertPlayerInput([i, j]);
+                    }
+                    
+                })
                 theGameboard.appendChild(cell);
             }
         }
