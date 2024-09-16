@@ -120,6 +120,10 @@ function tictactoe() {
         
         playBtn.addEventListener("click", () => {generateGameboard();})
         restartBtn.addEventListener("click", function() {
+            const oldBoard = document.getElementById("game-board");
+            if (oldBoard !== null) {
+                oldBoard.remove();
+            }
             reset();
             generateGameboard();
         });
