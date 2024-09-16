@@ -51,10 +51,10 @@ function tictactoe() {
             return gameBoardArr[0][0];
         }
         if (checkRow(1)) {
-            return gameBoardArr[1][0];
+            return gameBoardArr[0][1];
         }
         if (checkRow(2)) {
-            return gameBoardArr[2][0];
+            return gameBoardArr[0][2];
         }
     };
     const getWhoPlay = () => { return player; };
