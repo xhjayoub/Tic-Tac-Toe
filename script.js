@@ -111,7 +111,26 @@ function tictactoe() {
         }
         document.querySelector("body").appendChild(theGameboard);
     }
+    const playAndRestart = function() {
+        const btnContainer = document.createElement("div");
+        const playBtn = document.createElement("button");
+        playBtn.innerHTML = "Play";
+        const restartBtn = document.createElement("button");
+        restartBtn.innerHTML = "Restart";
+        
+        playBtn.addEventListener("click", () => {generateGameboard();})
+        restartBtn.addEventListener("click", function() {
+            reset();
+            generateGameboard();
+        });
+        btnContainer.appendChild(playBtn);
+        btnContainer.appendChild(restartBtn);
+
+        document.querySelector("body").appendChild(btnContainer);
+
+
+    }
+    playAndRestart();
     return { insertPlayerInput, displayGameBoard, getWhoPlay, play, generateGameboard};
 }
 const game = tictactoe();
-game.generateGameboard();
