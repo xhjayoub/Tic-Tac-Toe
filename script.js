@@ -28,6 +28,7 @@ function tictactoe() {
         }
     };
     const checkLine = (index) => { return (gameBoardArr[index][0] === gameBoardArr[index][1]) && (gameBoardArr[index][0] === gameBoardArr[index][2])};
+    const checkRow = (index) => { return (gameBoardArr[0][index] === gameBoardArr[1][index]) && (gameBoardArr[0][index] === gameBoardArr[2][index])};
     const checkDiag1 = () => { return (gameBoardArr[0][0] === gameBoardArr[1][1]) && (gameBoardArr[0][0] === gameBoardArr[2][2])};
     const checkDiag2 = () => { return (gameBoardArr[0][2] === gameBoardArr[1][1]) && (gameBoardArr[0][2] === gameBoardArr[2][0])};
     const checkWinner = function() {
@@ -44,6 +45,15 @@ function tictactoe() {
             return gameBoardArr[1][0];
         }
         if (checkLine(2)) {
+            return gameBoardArr[2][0];
+        }
+        if (checkRow(0)) {
+            return gameBoardArr[0][0];
+        }
+        if (checkRow(1)) {
+            return gameBoardArr[1][0];
+        }
+        if (checkRow(2)) {
             return gameBoardArr[2][0];
         }
     };
